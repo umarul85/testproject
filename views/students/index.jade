@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	h1 List all students
+	ul
+		for student in students
+			li
+				= student.student_id
+				= student.name
+				= student.ic_number
+				= student.year_join

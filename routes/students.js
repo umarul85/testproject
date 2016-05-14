@@ -17,10 +17,19 @@ router.post("/", function(req, res){
       console.log("Data is saved "+data);
     }
   });
+  res.redirect("/students");
+});
+
+router.get("/new", function(req, res){
+  res.render("students/new", {});
 });
 
 router.get("/", function(req, res){
-  res.render("students/new", {});
+  Student.find({}, function(err, students){
+    res.render("students/index", {
+      "students" : students
+    });
+  })
 });
 
 module.exports = router;
