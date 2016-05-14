@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+	h1 Add new student
+
+	form#addNewStudent(name="newStudent", method="post", action="/students")
+		p Student ID :
+			input#inputId(type="text" name="student_id")
+		p Name :
+			input#inputName(type="text" name="name")
+		p IC No :
+			input#inputIC(type="text" name="ic_number")
+		p Year joining :
+			input#inputYear(type="text" name="year_join")
+		p
+			button#btnSubmit(type="Submit") submit
